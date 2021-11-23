@@ -16,9 +16,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/elementary/granite.git
-        tag: '6.1.1'
-        commit: b2cf3b4c8a2fdd59daeefb396e9a846088f02b92
-
+        tag: '6.2.0'
+        commit: 4ab145c28bb3db6372fe519e8bd79c645edfcda3
   - name: pinit
     buildsystem: meson
     config-opts:
