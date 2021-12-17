@@ -16,8 +16,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/elementary/granite.git
-        tag: '6.1.1'
-        commit: b2cf3b4c8a2fdd59daeefb396e9a846088f02b92
+        tag: '6.2.0'
+        commit: 4ab145c28bb3db6372fe519e8bd79c645edfcda3
 
   - name: pinit
     buildsystem: meson
@@ -26,7 +26,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/ryonakano/pinit.git
-        tag: '1.2.1'
-        commit: aa09befa856f92640649bfa069694d3ce7232581
+        tag: '1.3.0'
+        commit: 7c7fe2373dc54d999633b0f01031cca4511fac4d
       - type: patch
         path: appdata-screenshots.patch
