@@ -1,6 +1,6 @@
 app-id: com.github.ryonakano.pinit
 runtime: org.gnome.Platform
-runtime-version: '42'
+runtime-version: '43'
 sdk: org.gnome.Sdk
 command: com.github.ryonakano.pinit
 finish-args:
@@ -11,20 +11,10 @@ finish-args:
   # For drawing icons
   - '--device=dri'
 modules:
-  - name: granite
-    buildsystem: meson
-    sources:
-      - type: git
-        url: https://github.com/elementary/granite.git
-        tag: '6.2.0'
-        commit: 4ab145c28bb3db6372fe519e8bd79c645edfcda3
-
   - name: pinit
     buildsystem: meson
     sources:
       - type: git
         url: https://github.com/ryonakano/pinit.git
-        tag: '1.4.1'
-        commit: cac456d6a0240997251f795a4b60dd5169fe72d7
-      - type: patch
-        path: appdata-screenshots.patch
+        tag: '2.0.0'
+        commit: 961ca1ce1f5f251f9bff51574e589449093ac526
