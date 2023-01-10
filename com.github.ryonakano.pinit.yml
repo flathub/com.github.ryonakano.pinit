@@ -16,5 +16,5 @@ modules:
     sources:
       - type: git
         url: https://github.com/ryonakano/pinit.git
-        #tag: '1.4.1'
-        commit: 052d254ad5201b224551eb31bc66e21a546c9185
+        tag: '2.0.0'
+        commit: 961ca1ce1f5f251f9bff51574e589449093ac526
