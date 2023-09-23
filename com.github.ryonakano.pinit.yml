@@ -1,6 +1,6 @@
 app-id: com.github.ryonakano.pinit
 runtime: org.gnome.Platform
-runtime-version: '44'
+runtime-version: '45'
 sdk: org.gnome.Sdk
 command: com.github.ryonakano.pinit
 finish-args:
@@ -14,6 +14,9 @@ modules:
   - name: pinit
     buildsystem: meson
     sources:
-      - type: archive
-        url: https://github.com/ryonakano/pinit/archive/refs/tags/2.0.1.tar.gz
-        sha256: 28ea3a68c53b566defce664dcf83e8944aa4beb969b78e7c8d4a3bdf7b2876f9
+      #      - type: archive
+      #        url: https://github.com/ryonakano/pinit/archive/refs/tags/2.0.1.tar.gz
+      #        sha256: 28ea3a68c53b566defce664dcf83e8944aa4beb969b78e7c8d4a3bdf7b2876f9
+      - type: git
+        url: https://github.com/ryonakano/pinit.git
+        commit: a26d81d0732fc9a0ea21af3552181a284e853b69
