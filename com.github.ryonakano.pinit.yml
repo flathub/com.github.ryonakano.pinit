@@ -15,6 +15,7 @@ modules:
     buildsystem: meson
     sources:
       - type: git
+        url: https://github.com/ryonakano/pinit.git
         commit: 1607e6d4b488b69e927c9f71a1be40ae2c6f89d2
       #- type: archive
         #url: https://github.com/ryonakano/pinit/archive/refs/tags/2.0.3.tar.gz
