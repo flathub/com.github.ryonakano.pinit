@@ -7,13 +7,15 @@ finish-args:
   - '--share=ipc'
   - '--socket=wayland'
   - '--socket=fallback-x11'
-  - '--filesystem=~/.local/share/applications'
+  - '--filesystem=home'
   # For drawing icons
   - '--device=dri'
 modules:
   - name: pinit
     buildsystem: meson
     sources:
-      - type: archive
-        url: https://github.com/ryonakano/pinit/archive/refs/tags/2.0.2.tar.gz
-        sha256: 066f4dfd65708bbe7191e111a0950818f42fdbd50e54579169d4e2b86a77a837
+      - type: git
+        commit: 1607e6d4b488b69e927c9f71a1be40ae2c6f89d2
+      #- type: archive
+        #url: https://github.com/ryonakano/pinit/archive/refs/tags/2.0.3.tar.gz
+        #sha256: 066f4dfd65708bbe7191e111a0950818f42fdbd50e54579169d4e2b86a77a837
