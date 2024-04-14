@@ -1,6 +1,6 @@
 app-id: com.github.ryonakano.pinit
 runtime: org.gnome.Platform
-runtime-version: '45'
+runtime-version: '46'
 sdk: org.gnome.Sdk
 command: com.github.ryonakano.pinit
 finish-args:
@@ -11,9 +11,21 @@ finish-args:
   # For drawing icons
   - '--device=dri'
 modules:
+  - name: blueprint-compiler
+    buildsystem: meson
+    cleanup:
+      - "*"
+    sources:
+      - type: archive
+        url: https://gitlab.gnome.org/jwestman/blueprint-compiler/-/archive/v0.12.0/blueprint-compiler-v0.12.0.tar.gz
+        sha256: 6dbb4ea851cec164030abded5949ea77ff92032e23527e1c0597d7efe0c36a81
+
   - name: pinit
     buildsystem: meson
     sources:
-      - type: archive
-        url: https://github.com/ryonakano/pinit/archive/refs/tags/2.0.3.tar.gz
-        sha256: ca96a9425a08ff29c17b393cdeb5301b0f80a355d83bae974fff5449e4f05617
+      #      - type: archive
+      #        url: https://github.com/ryonakano/pinit/archive/refs/tags/2.0.3.tar.gz
+      #        sha256: ca96a9425a08ff29c17b393cdeb5301b0f80a355d83bae974fff5449e4f05617
+      - type: git
+        url: https://github.com/ryonakano/pinit.git
+        commit: 11cb84942d43410fb677be757fd7c297e0e35f57
