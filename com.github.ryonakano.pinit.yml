@@ -30,3 +30,9 @@ modules:
       - type: archive
         url: https://github.com/ryonakano/pinit/archive/refs/tags/2.1.1.tar.gz
         sha256: 707a829f34760e1b4952caf447a0578a9a25ce810f83e2e82851363ee8e13f5e
+    post-install:
+      # workaround for non-png-icon-in-hicolor-size-folder lint error
+      # TODO: Fix in the next upstream release
+      - mkdir -p /app/share/icons/hicolor/scalable/apps
+      - mv /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
+      - find /app/share/icons/hicolor -type f -not -path "*scalable*" -not -path "*actions*" -name "*.svg" -delete
