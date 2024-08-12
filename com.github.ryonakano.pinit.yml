@@ -4,25 +4,35 @@ runtime-version: '46'
 sdk: org.gnome.Sdk
 command: com.github.ryonakano.pinit
 finish-args:
-  - '--share=ipc'
-  - '--socket=wayland'
-  - '--socket=fallback-x11'
-  - '--filesystem=home'
+  - --share=ipc
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=home
   # For drawing icons
-  - '--device=dri'
+  - --device=dri
 modules:
   - name: blueprint-compiler
     buildsystem: meson
     cleanup:
-      - "*"
+      - '*'
     sources:
       - type: archive
         url: https://gitlab.gnome.org/jwestman/blueprint-compiler/-/archive/v0.12.0/blueprint-compiler-v0.12.0.tar.gz
         sha256: 6dbb4ea851cec164030abded5949ea77ff92032e23527e1c0597d7efe0c36a81
+        x-checker-data:
+          type: anitya
+          project-id: 279929
+          url-template: https://gitlab.gnome.org/jwestman/blueprint-compiler/-/archive/v$version/blueprint-compiler-v$version.tar.gz
 
   - name: pinit
     buildsystem: meson
     sources:
       - type: archive
-        url: https://github.com/ryonakano/pinit/archive/refs/tags/2.1.0.tar.gz
-        sha256: 1cabc9719b5c434620b3a7d34d78c35d5bd8147269301eb41b0698a5440bbec1
+        url: https://github.com/ryonakano/pinit/archive/refs/tags/2.1.1.tar.gz
+        sha256: 707a829f34760e1b4952caf447a0578a9a25ce810f83e2e82851363ee8e13f5e
+    post-install:
+      # workaround for non-png-icon-in-hicolor-size-folder lint error
+      # TODO: Fix in the next upstream release
+      - mkdir -p /app/share/icons/hicolor/scalable/apps
+      - mv /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
+      - find /app/share/icons/hicolor -type f -not -path "*scalable*" -not -path "*actions*" -name "*.svg" -delete
