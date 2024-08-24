@@ -35,5 +35,4 @@ modules:
       # TODO: Fix in the next upstream release
       - mkdir -p /app/share/icons/hicolor/scalable/apps
       - mv /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
-      - find /app/share/icons/hicolor -type f -not -path "*scalable*" -not -path "*actions*"
-        -name "*.svg" -delete
+      - find /app/share/icons/hicolor -type f -not -path "*scalable*" -not -path "*actions*" -name "*.svg" -delete
