@@ -17,8 +17,8 @@ modules:
       - '*'
     sources:
       - type: archive
-        url: https://gitlab.gnome.org/jwestman/blueprint-compiler/-/archive/v0.16.0/blueprint-compiler-v0.16.0.tar.gz
-        sha256: 01feb8263fe7a450b0a9fed0fd54cf88947aaf00f86cc7da345f8b39a0e7bd30
+        url: https://gitlab.gnome.org/jwestman/blueprint-compiler/-/archive/v0.18.0/blueprint-compiler-v0.18.0.tar.gz
+        sha256: 703c7ccd23cb6f77a8fe9c8cae0f91de9274910ca953de77135b6e79dbff1fc3
         x-checker-data:
           type: anitya
           project-id: 279929
@@ -35,4 +35,5 @@ modules:
       # TODO: Fix in the next upstream release
       - mkdir -p /app/share/icons/hicolor/scalable/apps
       - mv /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
-      - find /app/share/icons/hicolor -type f -not -path "*scalable*" -not -path "*actions*" -name "*.svg" -delete
+      - find /app/share/icons/hicolor -type f -not -path "*scalable*" -not -path "*actions*"
+        -name "*.svg" -delete
