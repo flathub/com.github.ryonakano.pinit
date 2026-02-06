@@ -17,5 +17,4 @@ modules:
       - type: git
         url: https://github.com/ryonakano/pinit.git
         #tag: 2.2.1
-        branch: release-2.2.1
         commit: 9758d35512cdc52389af4da751b5a1135c4e3f7d
