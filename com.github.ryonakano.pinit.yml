@@ -17,4 +17,4 @@ modules:
       - type: git
         url: https://github.com/ryonakano/pinit.git
         #tag: 2.2.1
-        commit: 75c36edda742b239e07e8c5c2e4448e78530a8aa
+        commit: 9305d7c63b189331ac0cc65418c4f98d3f08ec29
